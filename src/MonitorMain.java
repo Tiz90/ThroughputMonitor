@@ -110,11 +110,17 @@ public class MonitorMain {
         
         System.out.println(" -- Overhead impostato: " + overheadperc + "%");
         System.out.println(" -- monitor name: " + monitorname);
-        overheadfactor = (float)overheadperc / 100;
+        
         
 		
-		
-		
+		// starting..
+        monitorStart(dir, overheadperc, logFile, monitorname);
+
+
+	}
+	
+	public static void monitorStart(String dir, int overheadperc, String logFile, String monitorname) throws IOException {
+		float overheadfactor = (float)overheadperc / 100;
 		File f = new File(dir);
 		int sleepTimeMillis = 5000;
 		double size = 0;
@@ -176,7 +182,6 @@ public class MonitorMain {
 			}
 		}
 		out.close();
-
 	}
 
 }
